@@ -2,7 +2,7 @@
 
 echo "enter the namber"
 read number
-if [ $number -gt 100 ]
+if [ $number -gt 100 ]      # the conddition should be in between space
 then
     echo "the given number is greater than 100"
 else
