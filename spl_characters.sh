@@ -32,7 +32,7 @@ echo "exit status of last cmd exicuted : $?"
 # home directory of current user : /home/ec2-user
 # who is running this script : ec2-user
 #  process ID of current script : 1499
-# the process ID of Last command :
+# the process ID of Last command :1527
 # exit status of last cmd exicuted : 0
 
 
