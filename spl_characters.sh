@@ -19,6 +19,20 @@ echo "present working directory : $PWD"
 echo "home directory of current user : $HOME" 
 echo "who is running this script : $USER" 
 echo " process ID of current script : $$"
-echo "the process ID of Last command : $!"     #if exit status than sucess else fail to exicute the cmd
 sleep 60&
+echo "the process ID of Last command : $!"     #if exit status than sucess else fail to exicute the cmd
 echo "exit status of last cmd exicuted : $?"
+
+#OUTPUT
+
+# all variables passed : 100 200 300
+# number of variables : 3
+# script name : spl_characters.sh
+# present working directory : /home/ec2-user/shell_scripting
+# home directory of current user : /home/ec2-user
+# who is running this script : ec2-user
+#  process ID of current script : 1499
+# the process ID of Last command :
+# exit status of last cmd exicuted : 0
+
+
