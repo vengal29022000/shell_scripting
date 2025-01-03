@@ -1,6 +1,6 @@
 #!bin/bash
 
-timestamp = $date
+timestamp = $(date)
 echo "file executes at : ${timestamp}
 movies=("RRR" "KGF" "V")   # defining a array
 
