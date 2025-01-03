@@ -1,6 +1,8 @@
 #!bin/bash
 
-movies= ("RRR" "KGF" "V")   # defining a array
+timestamp = $date
+echo "file executes at : ${timestamp}
+movies=("RRR" "KGF" "V")   # defining a array
 
 echo "first movie is : ${movies[0]}"    # printing the name of first movie with reference of index
 
