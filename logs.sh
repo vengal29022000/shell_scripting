@@ -6,10 +6,10 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 
-logs_folder="var/log/shellscript-logs"
+logs_folder="var/log/shellscript-logs"  #"/var/log/shellscript-logs
 log_file=$(echo $0 | cut -d "." -f1)
 timestamp=($date + %d-%m-%y-%M-%S)
-log_file_name="$logs_folder/$log_file/$timestamp.log"
+log_file_name="$logs_folder/$log_file-$timestamp.log"
 
 validate(){
     if [ $? -ne 0 ]
