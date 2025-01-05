@@ -9,10 +9,10 @@ Y="\e[33m"
 validate(){
     if [ $? -ne 0 ]
     then
-        echo "$1 ...$R failure $N"
+        echo -e "$1 ...$R failure $N"
         exit 1
     else 
-        echo "$1 ...$G success $N"
+        echo -e "$1 ...$G success $N"
     fi      
 }
 if [ $user_id -ne 0 ]  
@@ -27,7 +27,7 @@ then
     dnf install mysql -y
     validate "installing mysql"
 else
-    echo "$Y You already installed Mysql $N"
+    echo -e "$Y You already installed Mysql $N"
 
 fi
 
@@ -37,5 +37,5 @@ then
     dnf install git -y
     validate "installing git"
 else
-    echo "$Y git is already intalled on your server $N"
+    echo -e "$Y git is already intalled on your server $N"
 fi
