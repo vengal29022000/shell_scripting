@@ -6,7 +6,7 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 
-logs_folder="var/logs/shellscrpt-logs"
+logs_folder="var/log/shellscrpt-logs"
 log_file=$(echo $0 | cut -d "." -f1)
 timestamp=($date + %d-%m-%y-%M-%S)
 log_file_name="$logs_folder/$log_file/$timestamp.log"
@@ -20,7 +20,9 @@ validate(){
         echo -e "$1 ...$G success $N"
     fi      
 }
+
 echo "Script started exicuting at : $timestamp" &>> $log_file_name
+
 if [ $user_id -ne 0 ]  
 then
     echo "Error:You need super acess to run this"
