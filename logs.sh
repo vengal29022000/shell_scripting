@@ -7,7 +7,7 @@ G="\e[32m"
 Y="\e[33m"
 
 logs_folder="var/logs/shellscrpt-logs"
-log_file=(echo $0|cut "." -f1)
+log_file=(echo $0 | cut "." -f1)
 timestamp=($date + %d-%m-%y-%M-%S)
 log_file_name="$logs_folder/$log_file/$timestamp.log"
 
