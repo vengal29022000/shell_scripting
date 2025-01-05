@@ -2,7 +2,7 @@
 #!/bin/bash
 
 usr_id=$(id -u)           # if id -u gives output as 0 or non zero.O mean super user
-if[ $user_id -ne o ]  
+if[ $user_id -ne 0 ]  
 then
     echo "Error:You need super acess to run this"
     exit 1
