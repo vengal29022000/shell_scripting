@@ -7,37 +7,68 @@ then
     echo "Error:You need super acess to run this"
     exit 1
 fi
-
 dnf list installed mysql
-if [ $? -eq 0 ]
-then
+if [ $? -ne 0 ]
+then   
+    dnf install mysql -y
+    if [ $? -ne 0 ]
+    then
+        echo "Installing mysql failure"
+        exit 1
+    else 
+        echo "Installing mysql success"
+    fi    
+else
     echo "You already installed Mysql"
-else
-    echo "Installing Mysql...."
+
 fi
-
-dnf install mysql -y
-if [ $? -eq 0 ]
-then
-    echo "Mysql installed succesfully"
-else
-    echo "Installing Mysql....Failed"
-fi
-
-
 
 dnf list installed git
-if [ $? -eq 0 ]
+if [ $? -ne 0 ]
 then
-    echo "You already installed git"
+    dnf install git -y
+    if [ $? -ne 0 ]
+    then
+        echo "installing git failure"
+        exit 1
+    else
+        echo "Installing git....successful"
+
+    fi
 else
-    echo "Installing git...."
+    echo "git is already intalled on your server"
 fi
 
-dnf install git -y
-if [ $? -eq 0 ]
-then
-    echo "git installed succesfully"
-else
-    echo "Installing git....Failed"
-fi
+# dnf list installed mysql
+# if [ $? -eq 0 ]
+# then
+#     echo "You already installed Mysql"
+# else
+#     echo "Installing Mysql...."
+# fi
+
+# dnf install mysql -y
+# if [ $? -eq 0 ]
+# then
+#     echo "Mysql installed succesfully"
+# else
+#     echo "Installing Mysql....Failed"
+# fi
+
+
+
+# dnf list installed git
+# if [ $? -eq 0 ]
+# then
+#     echo "You already installed git"
+# else
+#     echo "Installing git...."
+# fi
+
+# dnf install git -y
+# if [ $? -eq 0 ]
+# then
+#     echo "git installed succesfully"
+# else
+#     echo "Installing git....Failed"
+# fi
