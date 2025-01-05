@@ -1,15 +1,15 @@
 # installing mysql,git using  if condition
 #!/bin/bash
 
-usr_id=$(id -u)           # if id -u gives output as 0 or non zero.O mean super user
-if[ $user_id -ne 0 ]  
+user_id=$(id -u)           # if id -u gives output as 0 or non zero.O mean super user
+if [ $user_id -ne 0 ]  
 then
     echo "Error:You need super acess to run this"
     exit 1
 fi
 
 dnf list installed mysql
-if[ $? -eq 0 ]
+if [ $? -eq 0 ]
 then
     echo "You already installed Mysql"
 else
@@ -17,7 +17,7 @@ else
 fi
 
 dnf install mysql -y
-if[ $? -eq 0 ]
+if [ $? -eq 0 ]
 then
     echo "Mysql installed succesfully"
 else
