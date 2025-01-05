@@ -6,10 +6,15 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 
-logs_folder="var/log/shellscript-logs"  #"/var/log/shellscript-logs
-log_file=$(echo $0 | cut -d "." -f1)
-timestamp=($date + %d-%m-%y-%M-%S)
-log_file_name="$logs_folder/$log_file-$timestamp.log"
+LOGS_FOLDER="/var/log/shellscript-logs"
+LOG_FILE=$(echo $0 | cut -d "." -f1 )
+TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
+LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"
+
+# logs_folder="var/log/shellscript-logs"  #"/var/log/shellscript-logs
+# log_file=$(echo $0 | cut -d "." -f1)
+# timestamp=($date + %d-%m-%y-%M-%S)
+# log_file_name="$logs_folder/$log_file-$timestamp.log"
 
 validate(){
     if [ $? -ne 0 ]
@@ -20,8 +25,8 @@ validate(){
         echo -e "$1 ...$G success $N"
     fi      
 }
-
-echo "Script started exicuting at : $timestamp" &>> $log_file_name
+echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
+# echo "Script started exicuting at : $timestamp" &>> $log_file_name
 
 if [ $user_id -ne 0 ]  
 then
