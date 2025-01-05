@@ -2,9 +2,9 @@
 #!/bin/bash
 
 user_id=$(id -u)           # if id -u gives output as 0 or non zero.O mean super user
-R="\e-[31m"
-G="\e-[32m"
-Y="\e-[33m"
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
 
 validate(){
     if [ $? -ne 0 ]
