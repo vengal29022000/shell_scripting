@@ -28,23 +28,23 @@ validate(){
 echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
 # echo "Script started exicuting at : $timestamp" &>> $log_file_name
 
-if [ $user_id -ne 0 ]  
+if [ $user_id -ne 0 ]  &>>$LOG_FILE_NAME
 then
     echo "Error:You need super acess to run this"
     exit 1
 fi
 
-dnf list installed mysql
+dnf list installed mysql &>>$LOG_FILE_NAME
 if [ $? -ne 0 ]
 then   
-    dnf install mysql -y
+    dnf install mysql -y    &>>$LOG_FILE_NAME
     validate "installing mysql"
 else
     echo -e "$Y You already installed Mysql $N"
 
 fi
 
-dnf list installed git
+dnf list installed git &>>$LOG_FILE_NAME
 if [ $? -ne 0 ]
 then
     dnf install git -y
