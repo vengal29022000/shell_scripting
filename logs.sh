@@ -9,7 +9,7 @@ Y="\e[33m"
 LOGS_FOLDER="/var/log/shellscript-logs"
 LOG_FILE=$(echo $0 | cut -d "." -f1 )
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
-LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"
+LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"     # Declaring path to use it line 28.Before doing that we need to create the folder in that path.
 
 # logs_folder="var/log/shellscript-logs"  #"/var/log/shellscript-logs
 # log_file=$(echo $0 | cut -d "." -f1)
